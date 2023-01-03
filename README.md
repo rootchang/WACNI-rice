@@ -4,12 +4,19 @@ Carbon and nitrogen metabolism are the basis for plant growth and development. T
 The model comprises five modules, i.e., root, leaf, grain, stem (including culm and sheath) and vascular transport system (xylem and phloem). Metabolites exchange between modules by trans-membrane transport. Fourteen types of biochemical and biophysical processes involved in different source, sink and transport organs are mathematically represented. These processes include assimilation, transport and utilization of six representative primary metabolites, i.e., triose phosphates (TP), sucrose (Suc), starch, inorganic nitrogen (I-N, including NH4+ and NO3-), free form of organic nitrogen (O-N, including amino acids and amides), and proteins. The model further incorporates the interaction between these metabolites and plant developmental processes, e.g. root growth, grain volume expansion (endosperm cell division), grain filling (starch and protein synthesis in endosperm), root senescence and leaf senescence. The apparent kinetic parameters for each process, initial metabolite concentrations, carbon and nitrogen mass in different organs at the flowering stage are input variables for the model. Finally, all types of plant-level physiological dynamics from flowering to harvest just emerge from this bottom-up simulation.
 
 %%%%%%%% This folder contains the following essential files for running the WACNI model and generating in silico evolution populations %%%%%%%%%
+
 %% RunModel.m
+
 %% simulation_main.m
+
 %% MyEventFunction.m
+
 %% GA_for_evolutionaryPopulation.m
+
 %% weather_input.txt
+
 %% README.txt
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %######  1. To run basic simulation for once, type in the following commands in MATLAB commands window:  ######%
