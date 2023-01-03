@@ -255,7 +255,9 @@ plantSizeOnly';c{2}=c{1};c{19}=1.13*90/160;c{44}=1.05;c{25}=1.007;c{5}=1.22/1.05
 
 %######  10. To perform sensitivity analysis of model parameters, using:  ######%
 
-para_list=[[1,1];[1,1];[1,1];[1,1];[0.5,2];... % invariant: A_Jmax, PPFD,leaf_area, Phi_CO2
+para_list=...
+
+    [[1,1];[1,1];[1,1];[1,1];[0.5,2];... % invariant: A_Jmax, PPFD,leaf_area, Phi_CO2
 
     [1,1];[0.5,2];[0.5,2];[0.5,2];[0.5,2];... % invariant: [NSC]inhibit_A_low
     
@@ -284,23 +286,41 @@ candi_name={'leafP2ON','leafONload','leafSUCload','leafIN2ON','leafTP2SUC','leaf
 count=0;
 
 for i=11:28
+
     c_list=ones(1,47);
+    
 	c_list(17)=seedNum;
+	
     for val=[0.1:0.1:0.9,2:1:10]
+    
         c_list(candi_pos(i))=val;
+	
         fnOutNA=[candi_name{i},'_',num2str(val)];
+	
         if exist([fnOutNA,'.txt'], 'file')==2 % when there are existing files
+	
             disp('****************************************************************');
+	    
             disp([fnOutNA,' has been done! Skipping it ...']);
+	    
             continue
+	    
         end
+	
         input_info=num2cell([1,1,c_list]);
+	
         input_info{1}=fnOutNA;
+	
         input_info{2}=fnOutNA;
+	
 		count=count+1;
+		
         fprintf('echo the %s (%d) is running...\n',fnOutNA,count);
+	
         RunModel(input_info,0,0,0,0);
+	
     end
+    
 end
 
 
