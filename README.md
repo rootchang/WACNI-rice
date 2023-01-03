@@ -19,17 +19,20 @@ The model comprises five modules, i.e., root, leaf, grain, stem (including culm 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %######  1. To run basic simulation for once, type in the following commands in MATLAB commands window:  ######%
 
 c=num2cell(ones(1,49));
 
 [Tt,simulation]=RunModel(c,0,0,0,0);
 
+
 %######  2. To run basic simulation for once, showing plant carbon and nitrogen economy during grain filling, using:  ######%
 
 c=num2cell(ones(1,49));
 
 [Tt,simulation]=RunModel(c,0,0,0,1);
+
 
 %######  3. To change one of the following parameters and run simulation for once (e.g. change c{7}: coef_K_protein_oN_leaf_cat to 0.5), using:  ######%
 
@@ -230,6 +233,7 @@ c=num2cell(ones(1,49));c{1}='gif1_s190';c{2}=c{1};c{19}=190/160;c{22}=1/2; RunMo
 
 c=num2cell(ones(1,49));c{1}='GIF1_OE_s190';c{2}=c{1};c{19}=190/160;c{22}=2; RunModel(c,0,0,0,0);
 
+
 %######  9. To simulate effect of Sh2r6hs transforming shown in Smidansky et al. (2003), using:  ######%
 
 c=num2cell(ones(1,49));c{1}='Sh2r6hs-WT';c{2}=c{1};c{19}=90/160;c{48}=1/2;c{27}=1/2;c{49}=1/2;c{5}=1/2;c{32}=1/2;c{21}=1; RunModel(c,0,0,0,0);
@@ -248,16 +252,25 @@ c=num2cell(ones(1,49));c{1}='Sh2r6hs-OE-
 plantSizeOnly';c{2}=c{1};c{19}=1.13*90/160;c{44}=1.05;c{25}=1.007;c{5}=1.22/1.05*1/2;c{32}=1.22/1.05*1/2;c{27}=1.22/1.05*1/2;c{48}=1.22/1.05*1/2;c{49}=1
 .22/1.05*1/2;c{21}=1; RunModel(c,0,0,0,0);
 
+
 %######  10. To perform sensitivity analysis of model parameters, using:  ######%
 
 para_list=[[1,1];[1,1];[1,1];[1,1];[0.5,2];... % invariant: A_Jmax, PPFD,leaf_area, Phi_CO2
+
     [1,1];[0.5,2];[0.5,2];[0.5,2];[0.5,2];... % invariant: [NSC]inhibit_A_low
+    
     [0.5,2];[0.5,2];[0.5,2];[1,1];[0.5,2];... % invariant: [O-N]leaf_protein_syn_low
+    
     [1,1];[1,1];[0.5,2];[0.5,2];[0.5,2];... % invariant: gamma_star, seed_number
+    
     [0.5,2];[0.5,2];[1,1];[1,1];[1,1];... % invariant: seed_width_max, seed_length_width_ratio, stem_starch_content
+    
     [0.5,2];[0.5,2];[0.5,2];[0.5,2];[1,1];... % invariant: root_weight
+    
     [1,1];[0.5,2];[0.5,2];[0.5,2];[0.5,2];... % invariant: soil_iN_conc
+    
     [0.5,2];[0.5,2];[0.5,2];[0.5,2];[0.5,2];... % invariant: 
+    
     [0.5,2];[1,1];[1,1];[1,1];[1,1];[1,1];[1,1]]; % invariant: tiller_number; CO2a; leaf_protein_content; seed_struct_N; stem_struct; stem_protein_content
 
 seedNum=190/160;
