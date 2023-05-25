@@ -8,7 +8,7 @@ In contrast to previous methods that have only considered phloem sucrose transpo
 One significant advantage of this model is that it eliminates the need for predefined growth patterns, allowing for a more accurate depiction of the underlying biological processes. Furthermore, this feature opens up possibilities for rational optimization of the fundamental biochemical and biophysical processes for higher grain yield. 
 
 <p align="center">
-  <img src="./images/GraphicAbstract.pdf" width = "1000" alt="method" align=center />
+  <img src="./images/GraphicAbstract.png" width = "1000" alt="method" align=center />
 </p>
 
 
