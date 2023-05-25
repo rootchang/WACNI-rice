@@ -8,7 +8,7 @@ In contrast to previous methods that have only considered phloem sucrose transpo
 One significant advantage of this model is that it eliminates the need for predefined growth patterns, allowing for a more accurate depiction of the underlying biological processes. Furthermore, this feature opens up possibilities for rational optimization of the fundamental biochemical and biophysical processes for higher grain yield. 
 
 <p align="center">
-  <img src="./.images/GraphicAbstract.pdf" width = "1000" alt="method" align=center />
+  <img src="./images/GraphicAbstract.pdf" width = "1000" alt="method" align=center />
 </p>
 
 
@@ -49,13 +49,13 @@ WACNI further incorporates the interaction between these metabolites and plant d
 It is worth emphasizing that WACNI simulates a plant in a canopy with user-defined row and column distances to neighboring plants (where plants share incident radiation and soil nitrogen), rather than a single-grown plant. Particularly, a sun-shade model was employed to simulate canopy photosynthesis. Additionally, a custom-built 1-dimensional root metabolism model was developed to simulate various processes, including root nitrogen uptake, nitrogen assimilation, root growth, and root senescence, based on previous experimental and theoretical studies. This enables us to easily scale single plant simulation results to a whole canopy by multiplying a factor of plant density per area.
 
 <p align="center">
-  <img src="./.images/FourteenProcesses.pdf" width = "1000" alt="method" align=center />
+  <img src="./images/FourteenProcesses.pdf" width = "1000" alt="method" align=center />
 </p>
 
 WACNI follows a principle of modular design. Specifically, WACNI comprises six modules, i.e., root, leaf, grain, stem (including culm and sheath), transport (vascular transport system, including xylem and phloem), and respiration. Metabolites exchange between modules by trans-membrane transport. Each module comprises a few previously well-established sub-models, e.g., the sun-shade canopy photosynthesis model, the stomatal conductance model, the phloem transport model, and organ respiration model. New sub-models are developed where no established sub-models are available, e.g., root metabolism model, grain development and storage model, and stem metabolite homeostasis model.
 
 <p align="center">
-  <img src="./.images/SixModules.pdf" width = "1000" alt="method" align=center />
+  <img src="./images/SixModules.pdf" width = "1000" alt="method" align=center />
 </p>
 
 The kinetic parameters for each process, initial metabolite concentrations, carbon and nitrogen mass in different organs at the flowering stage are input variables for the model. Finally, all types of plant-level physiological dynamics from flowering to harvest just emerge as output from this bottom-up simulation.
