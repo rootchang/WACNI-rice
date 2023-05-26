@@ -477,7 +477,7 @@ end
 
 ###  11. In silico design of rice grain filling ideotype for super-high yield
 
-To identify optimal parameter combinations maximizing grain yield with a genetic algorithm (on a Linux server), using the following commands:
+To perform a genetic algorithm optimization for identifying optimal parameter combinations maximizing grain yield on a Linux server, you can use the following commands in bash:
 
 ```
 matlab -singleCompThread -nodesktop -nojvm -nosplash -nodisplay -r GA_for_evolutionaryPopulation;exit &
