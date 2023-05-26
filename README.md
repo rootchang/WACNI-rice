@@ -1,20 +1,19 @@
 # WACNI-rice
 
 ## Introduction
-Carbon and nitrogen metabolism are the basis for plant growth and development. To predict grain yield formation directly from the molecular processes in different source, sink and transport organs, we develop a mechanistic model of Whole plAnt Carbon Nitrogen Interaction (WACNI). 
+Carbon and nitrogen metabolism play a crucial role in the growth and development of plants. In order to directly predict grain yield based on molecular processes occurring in various organs involved in source, sink, and transport, we have developed a mechanistic model called Whole plAnt Carbon Nitrogen Interaction (WACNI).
 
-In contrast to previous methods that have only considered phloem sucrose transport from leaf to grain, or relied on preset sink growth pattern, the key innovation of WACNI lies in its ability to integrate all essential biochemical and biophysical processes into a single model. This integration enables the kinetic simulation of authentic biological dynamics within a rice plant, spanning from flowering to harvest, and operating at a second-by-second time scale. 
+Unlike previous methods that focused solely on phloem sucrose transport from leaves to grains or relied on predetermined sink growth patterns, WACNI introduces a key innovation by integrating all essential biochemical and biophysical processes into a comprehensive model. This integration allows for the dynamic simulation of authentic biological dynamics within a rice plant, encompassing the entire growth cycle from flowering to harvest, and operating at a second-by-second time scale.
 
-One significant advantage of this model is that it eliminates the need for predefined growth patterns, allowing for a more accurate depiction of the underlying biological processes. Furthermore, this feature opens up possibilities for rational optimization of the fundamental biochemical and biophysical processes for higher grain yield. 
+One advantage of this model is its ability to eliminate the reliance on predefined growth patterns. As a result, it provides a more accurate representation of the underlying biological processes. Moreover, this feature opens up new possibilities for the rational optimization of fundamental biochemical and biophysical processes to achieve higher grain yields.
 
 <p align="center">
   <img src="./images/GraphicAbstract.png" width = "1000" alt="method" align=center />
 </p>
 
+WACNI is a comprehensive model that incorporates both carbon and nitrogen metabolism. It achieves this by employing ordinary differentiation equations to kinetically simulate the rates of major biochemical and physiological processes within a plant. The model encompasses fourteen distinct types of biochemical and biophysical processes that occur in various source, sink, and transport organs.
 
-WACNI models both carbon and nitrogen metabolism, and kinetically simulates rates of major basic biochemical and physiological processes in a plant by ordinary differentiation equations. Fourteen types of biochemical and biophysical processes involved in different source, sink and transport organs are mathematically represented. 
-
-These processes include assimilation, transport and utilization of six representative primary metabolites, i.e., triose phosphates (TP), sucrose (Suc), starch, inorganic nitrogen (I-N, including NH4+ and NO3-), free form of organic nitrogen (O-N, including amino acids and amides), and proteins. The 14 groups of simulated processes are listed below: 
+These processes encompass a range of activities, including the assimilation, transport, and utilization of six essential primary metabolites. These metabolites consist of triose phosphates (TP), sucrose (Suc), starch, inorganic nitrogen (I-N) in the form of NH4+ and NO3-, free organic nitrogen (O-N) in the form of amino acids and amides, as well as proteins. The following is a list of the fourteen groups of processes that are simulated by the model:
 
 > 1, root nitrogen uptake; 
 > 
@@ -44,21 +43,32 @@ These processes include assimilation, transport and utilization of six represent
 > 
 > 14, symplastic diffusion between phloem and stem. 
 
-WACNI further incorporates the interaction between these metabolites and plant developmental processes, e.g. root growth, grain volume expansion (endosperm cell division), grain filling (starch and protein synthesis in endosperm), root senescence and leaf senescence. 
 
-It is worth emphasizing that WACNI simulates a plant in a canopy with user-defined row and column distances to neighboring plants (where plants share incident radiation and soil nitrogen), rather than a single-grown plant. Particularly, a sun-shade model was employed to simulate canopy photosynthesis. Additionally, a custom-built 1-dimensional root metabolism model was developed to simulate various processes, including root nitrogen uptake, nitrogen assimilation, root growth, and root senescence, based on previous experimental and theoretical studies. This enables us to easily scale single plant simulation results to a whole canopy by multiplying a factor of plant density per area.
+WACNI goes beyond modeling biochemical and physiological processes alone and incorporates their interaction with key plant developmental processes. These include root growth, grain volume expansion (endosperm cell division), grain filling (starch and protein synthesis in the endosperm), root senescence, and leaf senescence.
+
+An important aspect of WACNI is its ability to simulate plant growth within a canopy, accounting for neighboring plants at user-defined row and column distances. This allows for the consideration of shared incident radiation and soil nitrogen between plants. To accurately represent canopy photosynthesis, the model employs a sun-shade model. Additionally, a custom-built 1-dimensional root metabolism model has been developed to simulate various processes such as root nitrogen uptake, nitrogen assimilation, root growth, and root senescence. This root metabolism model is based on previous experimental and theoretical studies.
+
+The inclusion of these features enables the easy scaling of single plant simulation results to a whole canopy. By multiplying the results with a factor representing plant density per unit area, WACNI provides insights into the behavior and dynamics of an entire plant community. 
 
 <p align="center">
   <img src="./images/FourteenProcesses.png" width = "1000" alt="method" align=center />
 </p>
 
-WACNI follows a principle of modular design. Specifically, WACNI comprises six modules, i.e., root, leaf, grain, stem (including culm and sheath), transport (vascular transport system, including xylem and phloem), and respiration. Metabolites exchange between modules by trans-membrane transport. Each module comprises a few previously well-established sub-models, e.g., the sun-shade canopy photosynthesis model, the stomatal conductance model, the phloem transport model, and organ respiration model. New sub-models are developed where no established sub-models are available, e.g., root metabolism model, grain development and storage model, and stem metabolite homeostasis model.
+WACNI adopts a modular design approach, which facilitates its organization and comprehensibility. The model is composed of six distinct modules, namely root, leaf, grain, stem (including culm and sheath), transport (vascular transport system encompassing xylem and phloem), and respiration. The exchange of metabolites between modules occurs through trans-membrane transport mechanisms. Each module consists of several sub-models that have been well-established in previous research or newly developed in this study.
+
+For instance, the sun-shade canopy photosynthesis model, stomatal conductance model, phloem transport model, and organ respiration model are among the established sub-models incorporated into WACNI. These sub-models contribute to the accurate representation of specific physiological processes within the respective modules. In cases where established sub-models are not available, WACNI incorporates newly developed sub-models. Examples of these include the root metabolism model, grain development and storage model, and stem metabolite homeostasis model.
+
+The modular design of WACNI allows for the integration of diverse sub-models, ensuring a comprehensive representation of plant metabolic processes and interactions. This approach facilitates the model's flexibility, scalability, and ability to address specific aspects of plant growth and development.
 
 <p align="center">
   <img src="./images/SixModules.png" width = "1000" alt="method" align=center />
 </p>
 
-The kinetic parameters for each process, initial metabolite concentrations, carbon and nitrogen mass in different organs at the flowering stage are input variables for the model. Finally, all types of plant-level physiological dynamics from flowering to harvest just emerge as output from this bottom-up simulation.
+The model takes into account various input variables, including 1) kinetic parameters for each process, 2) initial metabolite concentrations, and 3) the carbon and nitrogen mass present in different organs at the flowering stage. These inputs serve as the foundation for the bottom-up simulation conducted by the model.
+
+By integrating these inputs and simulating the biochemical and physiological processes at the organ level, WACNI generates comprehensive outputs that encompass all types of plant-level physiological dynamics from the flowering stage to harvest. These outputs emerge as a result of the model's ability to capture the intricate interactions and dynamics of carbon and nitrogen metabolism within the plant.
+
+Through this bottom-up simulation approach, WACNI provides valuable insights into the physiological behaviors of the plant as it progresses through its life cycle. It serves as a powerful tool for understanding and predicting plant growth and development, ultimately aiding in the optimization of agricultural practices and the enhancement of grain yield.
 
 
 ## System Requirements
@@ -93,7 +103,7 @@ The `WACNI-rice` package contains the following essential files for running the 
 
 
 ###  1. Basic simulation (1)
-To run basic simulation for once, without showing plant carbon and nitrogen economy during grain filling, type in the following commands in MATLAB command window:
+To initiate a basic simulation without displaying the plant carbon and nitrogen economy during grain filling, you can execute the following commands within the MATLAB command window:
 
 ```
 c=num2cell(ones(1,49));
@@ -101,7 +111,7 @@ c=num2cell(ones(1,49));
 ```
 
 ###  2. Basic simulation (2)
-To run basic simulation for once, with showing plant carbon and nitrogen economy during grain filling, using the following commands:
+To initiate a basic simulation with displaying the plant carbon and nitrogen economy during grain filling, you can execute the following commands within the MATLAB command window:
 
 ```
 c=num2cell(ones(1,49));
@@ -109,7 +119,7 @@ c=num2cell(ones(1,49));
 ```
 
 ###  3. Basic simulation (3)
-To change one of the parameters and run simulation for once (e.g. change c{7}: coef_K_protein_oN_leaf_cat to 0.5), using the following commands:
+To modify a specific parameter and run the simulation once (e.g., changing c{7}: coef_K_protein_oN_leaf_cat to 0.5), you can use the following commands in MATLAB:
 
 ```
 c=num2cell(ones(1,49));
@@ -117,10 +127,10 @@ c{7}=0.5;
 [Tt,simulation]=RunModel(c,0,0,0,0);
 ```
 
-Note: the mapping between index and parameters are listed below:
+Note: The following list provides the mapping between the index and parameters:
 
 
-|    Abbr    | Description |
+|    Index    | Parameter |
 | -------- | ----------- |
 |c{1}|Prefix of output txt file|
 |c{2}|Prefix of output plot file|
@@ -175,7 +185,7 @@ Note: the mapping between index and parameters are listed below:
 
 ###  4. Simulating different nitrogen regimes
 
-To simulate different nitrogen treatments shown in Zhao et al. (2015), using the following commands:
+To simulate different nitrogen treatments reported in  [Zhao et al. (2015)](https://doi.org/10.1016/j.jcs.2015.03.011), using the following commands:
 
 ```
 c=num2cell(ones(1,49));
@@ -200,7 +210,7 @@ The meaning of the abbreviations used in the code is listed as follows:
 
 
 ###  5. Simulating different light regimes
-To simulate different lighting regimes shown in Kobata et al. (2000), using the following commands:
+To simulate different lighting regimes reported in  [Kobata et al. (2000)](https://doi.org/10.2134/agronj2000.923411x), using the following commands:
 
 ```
 c=num2cell(ones(1,49));
@@ -220,7 +230,7 @@ c{1}='S10_50_Sp50';c{2}=c{1}; RunModel(c,50,1,50,0);
 c{1}='S10_75_Sp50';c{2}=c{1}; RunModel(c,75,1,50,0);
 ```
 
-The meaning of the abbreviations used in the code is listed as follows:
+The abbreviations used in the code have the following meanings:
 
 |    Abbr    | Description |
 | -------- | ----------- |
@@ -234,7 +244,7 @@ The meaning of the abbreviations used in the code is listed as follows:
 
 
 ###  6. Simulating different soil-nitrogen & air-CO2 concentration combinations
-To simulate different soil nitrogen & air CO2 concentrations shown in Kim et al. (2001), using the following commands:
+To simulate different soil nitrogen & air CO2 concentrations reported in  [Kim et al. (2001)](https://doi.org/10.1046/j.1469-8137.2001.00111.x), using the following commands:
 
 ```
 c=num2cell(ones(1,49));c{1}='MN';c{2}=c{1};c{19}=145/160;c{45}=390/400; RunModel(c,0,0,0,0);
@@ -276,7 +286,8 @@ vm_Nup64';c{2}=c{1};c{19}=145/160;c{25}=0.93^(1/3);c{22}=1;c{34}=0.64;c{44}=1.15
 ```
 
 
-The meaning of the abbreviations used in the code is listed as follows:
+The abbreviations used in the code have the following meanings:
+
 
 |    Abbr    | Description |
 | -------- | ----------- |
@@ -293,7 +304,7 @@ The meaning of the abbreviations used in the code is listed as follows:
 
 ###  7. Simulating effect of different leaf protein degradation activity 
 
-To simulate effect of the OsNAP gene alteration shown in Liang et al. (2014), using the following commands:
+To simulate effect of the OsNAP gene alteration reported in  [Liang et al. (2014)](https://doi.org/10.1073/pnas.1321568111), using the following commands:
 
 ```
 c=num2cell(ones(1,49));c{1}='OsNAP-WT';c{2}=c{1};c{19}=1;c{7}=0.5;c{48}=1;c{27}=1;c{49}=1;c{5}=1;c{32}=1; RunModel(c,0,0,0,0);
@@ -303,7 +314,8 @@ c=num2cell(ones(1,49));c{1}='OsNAP-mutant';c{2}=c{1};c{19}=0.735;c{7}=2;c{48}=0.
 c=num2cell(ones(1,49));c{1}='OsNAP-RNAi';c{2}=c{1};c{19}=1.11;c{7}=0.25;c{48}=1.11;c{27}=1.11;c{49}=1.11;c{5}=1.11;c{32}=1.11; RunModel(c,0,0,0,0);
 ```
 
-The meaning of the abbreviations used in the code is listed as follows:
+The abbreviations used in the code have the following meanings:
+
 
 |    Abbr    | Description |
 | -------- | ----------- |
@@ -314,7 +326,7 @@ The meaning of the abbreviations used in the code is listed as follows:
 
 ###  8. Simulating effect of different grain sucrose unloading activity
 
-To simulate effect of the GIF1 gene alteration shown in Wang et al. (2008), using the following commands:
+To simulate effect of the GIF1 gene alteration reported in  [Wang et al. (2008)](https://doi.org/10.1038/ng.220), using the following commands:
 
 ```
 c=num2cell(ones(1,49));c{1}='GIF1-WT';c{2}=c{1};c{19}=90/160;c{48}=1/2;c{27}=1/2;c{49}=1/2;c{5}=1/2;c{32}=1/2;c{22}=2; RunModel(c,0,0,0,0);
@@ -335,7 +347,8 @@ c=num2cell(ones(1,49));c{1}='GIF1_OE_s190';c{2}=c{1};c{19}=190/160;c{22}=2; RunM
 ```
 
 
-The meaning of the abbreviations used in the code is listed as follows:
+The abbreviations used in the code have the following meanings:
+
 
 |    Abbr    | Description |
 | -------- | ----------- |
@@ -350,7 +363,7 @@ The meaning of the abbreviations used in the code is listed as follows:
 
 ###  9. Simulating effect of different grain starch synthesis activity
 
-To simulate effect of Sh2r6hs transforming shown in Smidansky et al. (2003), using the following commands:
+To simulate effect of Sh2r6hs transforming reported in  [Smidansky et al. (2003)](https://doi.org/10.1007/s00425-002-0897-z), using the following commands:
 
 ```
 c=num2cell(ones(1,49));c{1}='Sh2r6hs-WT';c{2}=c{1};c{19}=90/160;c{48}=1/2;c{27}=1/2;c{49}=1/2;c{5}=1/2;c{32}=1/2;c{21}=1; RunModel(c,0,0,0,0);
@@ -376,7 +389,7 @@ plantSizeOnly';c{2}=c{1};c{19}=1.13*90/160;c{44}=1.05;c{25}=1.007;c{5}=1.22/1.05
 .22/1.05*1/2;c{21}=1; RunModel(c,0,0,0,0);
 ```
 
-The meaning of the abbreviations used in the code is listed as follows:
+The abbreviations used in the code have the following meanings:
 
 |    Abbr    | Description |
 | -------- | ----------- |
@@ -464,7 +477,7 @@ end
 
 ###  11. In silico design of rice grain filling ideotype for super-high yield
 
-To identify optimal parameter combinations maximizing grain yield with a genetic algorithm (on a Linux server), using the following commands (on a Linux server):
+To identify optimal parameter combinations maximizing grain yield with a genetic algorithm (on a Linux server), using the following commands:
 
 ```
 matlab -singleCompThread -nodesktop -nojvm -nosplash -nodisplay -r GA_for_evolutionaryPopulation;exit &
