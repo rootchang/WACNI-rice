@@ -485,7 +485,7 @@ matlab -singleCompThread -nodesktop -nojvm -nosplash -nodisplay -r GA_for_evolut
 
 ## How to Cite WACNI
 Please cite the following manuscript:
->A critical role of stable grain filling rate in maximizing rice yield revealed by whole plant carbon nitrogen interaction modeling. [https://www.biorxiv.org/content/10.1101/2020.10.06.329029v2.full](https://www.biorxiv.org/content/10.1101/2020.10.06.329029v2.full). <br>
+>Bridging photosynthesis and crop yield formation with a mechanistic model of whole-plant carbon–nitrogen interaction. [in silico Plants, Volume 5, Issue 2, 2023, diad011](https://doi.org/10.1093/insilicoplants/diad011). <br>
 Tian-Gen Chang, Zhong-Wei Wei, Zai Shi, Yi Xiao, Honglong Zhao, Shuo-Qi Chang, Mingnan Qu, Qingfeng Song, Faming Chen, Fenfen Miao, Xin-Guang Zhu
 
 
@@ -496,5 +496,4 @@ WACNI is licensed under the GNU General Public License v3.0. <br>
 If you have any questions, please submit them on the [GitHub issues page](https://github.com/rootchang/WACNI-rice/issues).
 
 ## Contact
-
-Tiangen Chang: changtiangen@gmail.com 
+Xin-Guang Zhu: zhuxg@cemps.ac.cn; Tiangen Chang: changtiangen@gmail.com 
