@@ -485,7 +485,7 @@ matlab -singleCompThread -nodesktop -nojvm -nosplash -nodisplay -r GA_for_evolut
 
 ## How to Cite WACNI
 Please cite the following manuscript:
->Bridging photosynthesis and crop yield formation with a mechanistic model of whole-plant carbon–nitrogen interaction. [in silico Plants, Volume 5, Issue 2, 2023, diad011](https://doi.org/10.1093/insilicoplants/diad011). <br>
+>[Bridging photosynthesis and crop yield formation with a mechanistic model of whole-plant carbon–nitrogen interaction. in silico Plants, Volume 5, Issue 2, 2023, diad011](https://doi.org/10.1093/insilicoplants/diad011). <br>
 Tian-Gen Chang, Zhong-Wei Wei, Zai Shi, Yi Xiao, Honglong Zhao, Shuo-Qi Chang, Mingnan Qu, Qingfeng Song, Faming Chen, Fenfen Miao, Xin-Guang Zhu
 
 
